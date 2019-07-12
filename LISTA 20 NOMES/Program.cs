@@ -15,7 +15,7 @@ namespace LISTA_20_NOMES
 
             Console.WriteLine("LISTA DE ALUNOS");
             Console.WriteLine("");
-            Console.WriteLine("DIGITE (1) PARA LISTAR ALUNOS E (2) PARA SAIR DO SISTEMA");
+            Console.WriteLine("DIGITE (1) PARA LISTAR ALUNOS OU QUALQUER TECLA PARA SAIR DO SISTEMA");
             Console.WriteLine("");
 
             int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
@@ -25,11 +25,7 @@ namespace LISTA_20_NOMES
                 MostarLIsta(); 
             }
 
-            if (opcao == 2)
-
-            {
-                return;
-            }
+         
         }
 
         public static void CarregaBaseDeAlunos()

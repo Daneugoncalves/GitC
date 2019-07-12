@@ -16,8 +16,8 @@ namespace SISTEMA_BEBIDAS
             var nome = Console.ReadLine();
 
             Console.WriteLine("Digite sua idade: ");
-
             string line = Console.ReadLine();
+
             int idade = Convert.ToInt32(line);
 
             
