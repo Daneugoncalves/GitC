@@ -84,20 +84,34 @@ namespace AlocacaoCarros
         /// </summary>
         /// <param name="nomeCarro">Nome do Carro a ser pesquisado</param>
         /// <returns>Retorna verdadeiro em caso o Carro estiver livre para alocação.</returns>
-        public static bool PesquisaCarroParaAlocacao(string nomeCarro)
+        public static bool? PesquisaCarroParaAlocacao(string nomeCarro)
         {
             for (int i = 0; i < baseDeCarros.GetLength(0); i++)
             {
-                if (nomeCarro == baseDeCarros[i, 0])
+               
+                if (CompararNomes(nomeCarro, baseDeCarros[i, 0]))
                 {
                     Console.WriteLine($"O Carro:{nomeCarro}" +
                           $" pode ser alocado?:{baseDeCarros[i, 2]}");
 
                     return baseDeCarros[i, 2] == "sim";
                 }
+
+                Console.WriteLine("Nehum carro encontrado, deseja realizar a busca novamente?");
+                Console.WriteLine("Digite o numero da opção desejada: sim (1) Nao (0)");
+                int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
+
+                if (opcao == 1)
+                {
+
+                    Console.WriteLine("Digite o nome do Livro a ser pesquisado: ");
+                    nomeCarro = Console.ReadLine();
+
+                    return PesquisaCarroParaAlocacao(nomeCarro);
+                }
             }
 
-            return false;
+            return null;
         }
         /// <summary> 
         /// Metodo para alterar a informação de alocação do Carro.
@@ -108,7 +122,9 @@ namespace AlocacaoCarros
         {
             for (int i = 0; i < baseDeCarros.GetLength(0); i++)
             {
-                if (nomeCarro == baseDeCarros[i, 0])
+                if (CompararNomes(nomeCarro, baseDeCarros[i, 0]))
+
+        
                 {
                     baseDeCarros[i, 2] = alocar ? "não" : "sim";
                 }
@@ -126,7 +142,10 @@ namespace AlocacaoCarros
             MostrarMenuInicialCarros("Alocar um Carro:");
 
             var nomedoCarro = Console.ReadLine();
-            if (PesquisaCarroParaAlocacao(nomedoCarro))
+            var resultadoPesquisa = PesquisaCarroParaAlocacao(nomedoCarro);
+
+            if (resultadoPesquisa != null && resultadoPesquisa == true)
+
             {
                 Console.Clear();
                 MostrarSejaBemVindo();
@@ -137,6 +156,11 @@ namespace AlocacaoCarros
                 MostrarListaDeCarros();
 
                 Console.ReadKey();
+            }
+
+            if (resultadoPesquisa == null)
+            {
+                Console.WriteLine("Nenhum carro encontrado em nossa base de dados do sistema.");
             }
         }
         /// <summary>
@@ -158,7 +182,12 @@ namespace AlocacaoCarros
             MostrarListaDeCarros();
 
             var nomedoCarro = Console.ReadLine();
-            if (!PesquisaCarroParaAlocacao(nomedoCarro))
+            var resultadoPesquisa = PesquisaCarroParaAlocacao(nomedoCarro);
+
+            if (resultadoPesquisa != null
+                && PesquisaCarroParaAlocacao(nomedoCarro) == false) 
+
+
             {
                 Console.Clear();
                 MostrarSejaBemVindo();
@@ -170,6 +199,11 @@ namespace AlocacaoCarros
 
                 Console.ReadKey();
             }
+
+            if (resultadoPesquisa == null)
+            {
+                Console.WriteLine("Nenhum livro encontrado em nossa base de dados do sistema.");
+            }
         }
         public static void MostrarMenuInicialCarros(string operacao)
         {
@@ -179,6 +213,15 @@ namespace AlocacaoCarros
 
             Console.WriteLine($"Menu - {operacao}");
             Console.WriteLine("Digite o nome do Carro para realizar a operação:");
+        }
+
+        public static bool CompararNomes(string primeiro, string segundo)
+        {
+            if (primeiro.ToLower().Replace(" ", "")
+                == segundo.ToLower().Replace(" ", ""))
+                return true;
+
+            return false;
         }
 
 
