@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaBibliotecadessaloca
+namespace SistemaBibliotecaOnlineNasa3PONTOZERO
 {
     class Program
     {
@@ -15,12 +15,12 @@ namespace SistemaBibliotecadessaloca
 
             var opcaoMenu = MenuPrincipal();
 
-            while (opcaoMenu != 3)
+            while(opcaoMenu != 3)
             {
-                if (opcaoMenu == 1)
+                if(opcaoMenu == 1)
                     AlocarUmLivro();
 
-                if (opcaoMenu == 2)
+                if(opcaoMenu == 2)
                     DesalocarUmLivro();
 
                 opcaoMenu = MenuPrincipal();
@@ -92,18 +92,18 @@ namespace SistemaBibliotecadessaloca
 
             return false;
         }
-        /// <summary>
+        /// <summary> 
         /// Metodo para alterar a informação de alocação do livro.
         /// </summary>
         /// <param name="nomeLivro">Nome do livro</param>
         /// <param name="alocar">Valor booleano que define se o livro esta ou não disponivel.</param>
-        public static void AlocarLivro(string nomeLivro, bool alocar)
+        public static void AlocarLivro(string nomeLivro,bool alocar)
         {
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
             {
                 if (nomeLivro == baseDeLivros[i, 0])
                 {
-                    baseDeLivros[i, 1] = alocar ? "não" : "sim";
+                    baseDeLivros[i, 1] = alocar? "não" : "sim";
                 }
             }
 
@@ -174,6 +174,6 @@ namespace SistemaBibliotecadessaloca
             Console.WriteLine("Digite o nome do livro para realizar a operação:");
         }
 
-
+ 
     }
 }
