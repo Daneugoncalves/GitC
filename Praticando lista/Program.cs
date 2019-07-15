@@ -21,12 +21,9 @@ namespace Praticando_lista
 
             for (int i = 0; i < listaDeCarros.GetLength(0); i++)
 
-
             Console.WriteLine(string.Format("Registro ID {0} - Carro: {1} - Placa: {2} ", listaDeCarros[i, 0], listaDeCarros[i, 1], listaDeCarros[i, 2]));
             Console.ReadKey();
-
         }
-
         public static void AumentaALista(ref string[,] listaDeCarros)
 
         {
