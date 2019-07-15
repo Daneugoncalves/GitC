@@ -15,8 +15,6 @@ namespace Praticando_lista
 
             InserirREgistro(ref listaDeCarros, ref IDLista);
 
-            Console.ReadKey();
-
             Console.WriteLine("Registro adicionado com sucesso, lista das informações adicionadas: ");
 
             for (int i = 0; i < listaDeCarros.GetLength(0); i++)
