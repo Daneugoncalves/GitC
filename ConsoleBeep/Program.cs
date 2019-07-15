@@ -12,25 +12,32 @@ namespace ConsoleBeep
 
         static void Main()
         {
+            //Aqui nesta parte ele pega a hora e os minutos
             var dateVerify = DateTime.Now.ToString("HH:mm");
 
+            //pede inf da fileira 
             Console.WriteLine("informe sua fileira");
-            var fileira = Console.ReadLine();
+            var fileira = Console.ReadLine(); // pega o numeor digitado
 
             Console.WriteLine("Informe a hora de inicio no formato HH:mm");
+            //assinando nossa varaiavel de comparação
             var timeStart = Console.ReadLine();
 
+            //laço de repetição que fica rodando enquanto nao for a hora marcada
             while (dateVerify != timeStart)
             {
-                Thread.Sleep(100);
+                //atualiza a variavel "dataVerify" com a hora e minuto atuais
                 dateVerify = DateTime.Now.ToString("HH:mm");
             }
 
-            var startTimerIcrement = 100;
+            //seta o tempo de incremento entre as execuções
+            var startTimerIcrement = 200;
 
+            //pega um valor de um objeto qualquer e cria uma lista para o mesmo e executa de acordo com a chamada
             switch (fileira)
             {
-                case "1":  { Fileira1(startTimerIcrement); } break;
+                // CAse identifica que ele prescisa fazer uma escolha e executa conforma o caso escolhido
+                case "1":  { Fileira1(startTimerIcrement); } break; // executa o caso escolhido e o break finaliza a operação
                 case "2":  { Fileira2(startTimerIcrement); } break;
                 case "3":  { Fileira3(startTimerIcrement); } break;
                 case "4":  { Fileira4(startTimerIcrement); } break;
@@ -40,7 +47,11 @@ namespace ConsoleBeep
                 case "8":  { Fileira8(startTimerIcrement); } break;
                 case "9":  { Fileira9(startTimerIcrement); } break;
                 case "10": { Fileira10(startTimerIcrement); } break;
+                default:{Console.WriteLine("Não foi uma escolha válida dentro do menu de opções");} break;
+
             }
+
+
 
             Console.WriteLine();
             
