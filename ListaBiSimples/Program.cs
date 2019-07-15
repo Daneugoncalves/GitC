@@ -26,6 +26,7 @@ namespace ListaBiSimples
             Console.ReadKey();
 
             Console.WriteLine("informe i ID do registro a ser pesquisado.");
+           
 
             PesquisandoInformacoesNaNOssaLsta(listaDeNome, Console.ReadLine());
 
