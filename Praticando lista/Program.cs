@@ -13,47 +13,17 @@ namespace Praticando_lista
             string[,] listaDeCarros = new string[3, 3];
             int IDLista = 0;
 
-            for (int i = 0; i < listaDeCarros.GetLength(0); i++)
-            {
+            InserirREgistro(ref listaDeCarros, ref IDLista);
 
-                if (listaDeCarros[i, 0] != null)
-                    continue;
-
-                Console.WriteLine("informe um carro para adicionar na lista");
-                var nomeCarro = Console.ReadLine();
-                
-
-                listaDeCarros[i, 0] = (IDLista++).ToString();
-                listaDeCarros[i, 1] = nomeCarro;
-
-                Console.WriteLine("informe a placa do carro para adicionar na lista");
-                var placa = Console.ReadLine();
-
-                listaDeCarros[i, 2] = placa;
-
-                Console.WriteLine("Deseja inserir um novo registro? sim(1) Não(0)");
-                var continuar = Console.ReadKey().KeyChar.ToString();
-                Console.Clear();
-
-
-                if (continuar == "0")
-                    break;
-
-              
-
-                AumentaALista(ref listaDeCarros);
-            }
+            Console.ReadKey();
 
             Console.WriteLine("Registro adicionado com sucesso, lista das informações adicionadas: ");
-           
+
             for (int i = 0; i < listaDeCarros.GetLength(0); i++)
-                //Utilizamos o string format, basicamente ele faz da mesma forma que o $
-                //a diferença entre eles é que este e um cara em grande quantidades
-                //acaba sendo mais rápido
 
-                Console.WriteLine(string.Format("Registro ID {0} - Carro: {1} - Placa: {2} ", listaDeCarros[i, 0], listaDeCarros[i, 1], listaDeCarros[i,2]));
 
-                Console.ReadKey();
+            Console.WriteLine(string.Format("Registro ID {0} - Carro: {1} - Placa: {2} ", listaDeCarros[i, 0], listaDeCarros[i, 1], listaDeCarros[i, 2]));
+            Console.ReadKey();
 
         }
 
@@ -87,6 +57,44 @@ namespace Praticando_lista
 
                 Console.WriteLine("o tamanho da lista foi att");
 
+            }
+
+
+        }
+
+        public static void InserirREgistro(ref string[,] listaDeCarros, ref int IDLista)
+
+        {
+
+            for (int i = 0; i < listaDeCarros.GetLength(0); i++)
+            {
+
+                if (listaDeCarros[i, 0] != null)
+                    continue;
+
+                Console.WriteLine("informe um carro para adicionar na lista");
+                var nomeCarro = Console.ReadLine();
+
+
+                listaDeCarros[i, 0] = (IDLista++).ToString();
+                listaDeCarros[i, 1] = nomeCarro;
+
+                Console.WriteLine("informe a placa do carro para adicionar na lista");
+                var placa = Console.ReadLine();
+
+                listaDeCarros[i, 2] = placa;
+
+                Console.WriteLine("Deseja inserir um novo registro? sim(1) Não(0)");
+                var continuar = Console.ReadKey().KeyChar.ToString();
+                Console.Clear();
+
+
+                if (continuar == "0")
+                    break;
+
+
+
+                AumentaALista(ref listaDeCarros);
             }
 
 
