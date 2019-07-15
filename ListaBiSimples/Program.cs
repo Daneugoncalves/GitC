@@ -18,9 +18,20 @@ namespace ListaBiSimples
             //usando um laço simples para colocar valores mas no memso agora utilizando o
             // GetLength com o paramtro "0" para indicar que queremos o tamanho da primeira coluna
             string[,] listaDeNome = new string[5, 2];
+
+            //Aqui como estamos usando apenas uma referencia da nossa lista colocamos ref ao passar ela no metodo
             CarregaInformacoesEListaEmTela(ref listaDeNome);
 
+            // apos carregar informacoes e mostrar na tela espera um comando 
             Console.ReadKey();
+
+            Console.WriteLine("informe i ID do registro a ser pesquisado.");
+
+            PesquisandoInformacoesNaNOssaLsta(listaDeNome, Console.ReadLine());
+
+            Console.ReadKey();
+
+            //Aqui 
 
         }
         public static void CarregaInformacoesEListaEmTela(ref string[,] arrayBi)
@@ -47,7 +58,7 @@ namespace ListaBiSimples
 
         }
 
-        public static void PesquisandoInformacoesNaNOssaLsta(ref string[,] arrayBi, string pId)
+        public static void PesquisandoInformacoesNaNOssaLsta(string[,] arrayBi, string pId)
 
         {
             for (int i = 0; i < arrayBi.GetLength(0); i++)
