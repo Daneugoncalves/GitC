@@ -37,6 +37,8 @@ namespace ProjetoFinalConsole
         public static string ApresentaMenuInicial()
 
         {
+
+            //Apresentamos o menu com as opções
             Console.Clear();
             Console.WriteLine("---------- BEM VINDO AO SISTEMA DA BIBLIOTECA --------");
             Console.WriteLine("---------- selecione a opção desejada no menu --------");
@@ -47,10 +49,10 @@ namespace ProjetoFinalConsole
             Console.WriteLine("4 - Listar informações desativadas");
             Console.WriteLine("5 - Sair do sistema");
 
-            Console.WriteLine("");
+            Console.WriteLine(""); // pula uma linha
 
-            Console.WriteLine("Digite o numero da opção desejada");
-            //retorna diretamente o menu escolhido
+            Console.WriteLine("Digite o numero da opção desejada");// informarma para usuario digitar alguma opção
+            // le a linha e retorna diretamente o menu escolhido
             return Console.ReadLine();
 
         }
@@ -62,27 +64,28 @@ namespace ProjetoFinalConsole
         public static void InserirRegistro(ref string[,] listaDelivros, ref int IDLista)
 
         {
-            Console.Clear();
+            Console.Clear(); // apaga dados anteriores do console
             Console.WriteLine("---------Inserindo valores na lista---------");
 
-            Console.WriteLine("Informe um nome para o livro:");
+            Console.WriteLine("Informe um nome para o livro:"); // pede para o user fazer uma inserção de valor "o nome"
 
-            var nomeLivro = Console.ReadLine();
+            var nomeLivro = Console.ReadLine(); // a variavel nomeLIvro é gravada com oque o user digitou
 
             Console.WriteLine("Informe o Autor do livro");
-            //Aqui pegamos a idade da pessoa digitada pelo usuario do sistema
+            //agr o mesmo com o nome do Autor do livro
             var Autor = Console.ReadLine();
 
             //Aumenta o tamanho da nossa lista quando chegou no limite.
             AumentaALista(ref listaDelivros);
 
+            //laço repetição inserindo os registros
             for (int i = 0; i < listaDelivros.GetLength(0); i++)
             {
 
                 if (listaDelivros[i, 0] != null)
                     continue;
 
-                listaDelivros[i, 0] = (IDLista++).ToString();
+                listaDelivros[i, 0] = (IDLista++).ToString(); // auto incrementa o ID
                 listaDelivros[i, 1] = nomeLivro;
                 listaDelivros[i, 2] = Autor;
                 listaDelivros[i, 3] = "true";
@@ -93,7 +96,7 @@ namespace ProjetoFinalConsole
 
             Console.WriteLine("Registro cadastrado com sucesso!");
             Console.WriteLine("Para voltar ao menu inicial, basta apertar qualquer tecla.");
-            Console.ReadKey();
+            Console.ReadKey(); //espera uma tecla para proseguir
 
 
         }
@@ -104,6 +107,7 @@ namespace ProjetoFinalConsole
         public static void AumentaALista(ref string[,] listaDeLivros)
 
         {
+            //verfica o tamanho da lista, e a incrementa dinamicamente 
             var limiteDaLista = true;
 
             for (int i = 0; i < listaDeLivros.GetLength(0); i++)
@@ -177,8 +181,6 @@ namespace ProjetoFinalConsole
             Console.Clear();
             Console.WriteLine("Area de remoção de registro dos livros do sistema. ");
 
-
-
             for (int i = 0; i < listaDeLivros.GetLength(0); i++)
             {
                 //Identifica que so deve remover os valores ativos dentro do sistema
@@ -187,9 +189,6 @@ namespace ProjetoFinalConsole
                           $"- livro:{listaDeLivros[i, 1]} " +
                           $"- autor:{listaDeLivros[i, 2]}");
             }
-
-
-
 
             Console.WriteLine("Informe o id do registro a ser removido: ");
             var id = Console.ReadLine();
