@@ -18,6 +18,8 @@ namespace InserteREmoveInLIst
 
             //apresentação inicial do nosso sistema
             Console.WriteLine("Iniciando sistema de lista de nome e idade");
+
+
             //Criamos a variavel fora para nao ser criada novamente
             var escolhaInicial = ApresentaMenuInicial();
 
@@ -64,11 +66,11 @@ namespace InserteREmoveInLIst
 
         {
             Console.WriteLine("-------Inserindo Valores na Lista--------");
-            Console.WriteLine("Informe um nome: ");
-            var nome = Console.ReadLine();
+            Console.WriteLine("Informe o nome do livro: ");
+            var nomeLivro = Console.ReadLine();
 
-            Console.WriteLine("Informe a idade");
-            var idade = Console.ReadLine();
+            Console.WriteLine("Informe a autor");
+            var autor = Console.ReadLine();
 
 
             //aumenta o tamanho de nossa lista quando chega ao limite
@@ -85,9 +87,9 @@ namespace InserteREmoveInLIst
                 //antes de fazer a conversao para string
                 baseDeDados[i, 0] = (IndiceBaseDados++).ToString();
                 //carregamos na segunda coluna o valor do nome
-                baseDeDados[i, 1] = nome;
+                baseDeDados[i, 1] = nomeLivro;
                 //terceira o valor da idade
-                baseDeDados[i, 2] = idade;
+                baseDeDados[i, 2] = autor;
                 //carrega a coluna que identifica se o registro esta ativo
                 baseDeDados[i, 3] = "true";
                 //
@@ -101,9 +103,6 @@ namespace InserteREmoveInLIst
             Console.WriteLine("Registro cadastrado com sucesso");
             Console.WriteLine("Para voltar ao menu inicial basta apertar qualquer tecla. ");
             Console.ReadKey();
-
-
-
 
         }
 
@@ -138,8 +137,12 @@ namespace InserteREmoveInLIst
             Console.WriteLine("Area de remoção de registro do sistema. ");
 
             for (int i = 0; i < baseDeDados.GetLength(0); i++)
-                Console.WriteLine($"ID:{baseDeDados[i, 0]} Nome:{baseDeDados[i, 1]} Idade:{baseDeDados[i, 2]} ");
+            {
 
+                if (baseDeDados[i,3] != "false")
+
+                Console.WriteLine($"ID:{baseDeDados[i, 0]} Nome:{baseDeDados[i, 1]} Idade:{baseDeDados[i, 2]} ");
+            }
             Console.WriteLine("Informe o id do registro a ser removido: ");
             var id = Console.ReadLine();
 
