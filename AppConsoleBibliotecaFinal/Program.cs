@@ -10,7 +10,7 @@ namespace AppConsoleBibliotecaFinal
     {
         static void Main(string[] args)
         {
-            string[,] listaDeLivros = new string[3, 5]; // Criando a arrayLista
+            string[,] listaDeLivros = new string[5, 5]; // Criando a arrayLista
             int IndiceBaseDados = 0;
 
             var escolhaInicial = ApresentaMenuInicial();
@@ -39,12 +39,13 @@ namespace AppConsoleBibliotecaFinal
             Console.WriteLine("---------- selecione a opção desejada no menu --------");
             Console.WriteLine("");
             Console.WriteLine("1 - Insira um novo registro");
-            Console.WriteLine("2 - Remover um novo registro");
+            Console.WriteLine("2 - Remover um registro");
             Console.WriteLine("3 - Listar informações");
             Console.WriteLine("4 - Listar informações desativadas");
             Console.WriteLine("5 - Sair do sistema");
-            
 
+            Console.WriteLine("");
+            
             Console.WriteLine("Digite o numero da opção desejada");
             //retorna diretamente o menu escolhido
             return Console.ReadLine();
