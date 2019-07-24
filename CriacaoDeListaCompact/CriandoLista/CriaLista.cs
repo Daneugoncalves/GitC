@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CriacaoDeListaCompact.CriandoLista
 {
-    class CriaLista
+    public class CriaLista
     {
         string[] lista = new string[10];
 
@@ -30,7 +30,7 @@ namespace CriacaoDeListaCompact.CriandoLista
         {
             foreach (var item in lista)
 
-                Console.WriteLine(item);
+            Console.WriteLine(item);
             Console.ReadKey();
         }
 
@@ -39,6 +39,11 @@ namespace CriacaoDeListaCompact.CriandoLista
             for (int i = 0; i < lista.Length; i++)
                 lista[i] = string.Empty;
 
+        }
+
+        public void MudarTamanho()
+        {
+            
         }
     }
 
