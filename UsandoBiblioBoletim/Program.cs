@@ -12,20 +12,16 @@ namespace UsandoBiblioBoletim
         static void Main(string[] args)
         {
             Boletim bol = new Boletim();
+            Listas lis = new Listas();
 
-            Console.WriteLine("Digite a nota1");
-            var nota1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Digite a nota2");
-            var nota2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Digite a nota3");
-            var nota3 = Convert.ToInt32(Console.ReadLine());
+            lis.Menu();
 
-            var media = bol.CalculaMedia(nota1, nota2, nota3);
-            var frequencia = bol.CalculaFrequencia(100, 10);
-
-            bol.situacao(media, frequencia);
             Console.ReadKey();
 
         }
+      
+
     }
+
+  
 }
