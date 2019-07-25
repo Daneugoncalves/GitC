@@ -13,7 +13,6 @@ namespace BibliotecaBoletinEscolar
 
         int indiceBase = 0;
 
-
         public void inserir()
         {
             for (int i = 0; i < arrayAluno.GetLength(0); i++)

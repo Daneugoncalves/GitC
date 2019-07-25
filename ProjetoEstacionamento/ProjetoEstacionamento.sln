@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoEstacionamento", "ProjetoEstacionamento.csproj", "{09504E72-38AD-4EF7-9E49-200C0D86022C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsandoBibliotecaEstaciomanento", "..\UsandoBibliotecaEstaciomanento\UsandoBibliotecaEstaciomanento.csproj", "{FB505491-9E04-4041-952A-634AD75D0F40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09504E72-38AD-4EF7-9E49-200C0D86022C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09504E72-38AD-4EF7-9E49-200C0D86022C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09504E72-38AD-4EF7-9E49-200C0D86022C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09504E72-38AD-4EF7-9E49-200C0D86022C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB505491-9E04-4041-952A-634AD75D0F40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB505491-9E04-4041-952A-634AD75D0F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB505491-9E04-4041-952A-634AD75D0F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB505491-9E04-4041-952A-634AD75D0F40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F910886-EF54-4D5D-9844-FACA6786426E}
+	EndGlobalSection
+EndGlobal

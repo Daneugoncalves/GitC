@@ -26,7 +26,7 @@ namespace ProjetoDaCalculadora
 
 
         }
-            public int CalculaAdicao(int valor1, int valor2)
+        public int CalculaAdicao(int valor1, int valor2)
         {
             return valor1 + valor2;
         }
