@@ -8,23 +8,22 @@ namespace ProjetoEstacionamento
 {
     public class Carro
     {
-        string[,] ArrayCarros = new string[1, 5];
+        string[,] ArrayCarros = new string[2, 5];
         int IDcarro = 0;
-
 
 
         public void CadastrarCarro()
         {
             for (int i = 0; i < ArrayCarros.GetLength(0); i++)
             {
-               
+
                 Console.WriteLine("Informe a placa do veiculo");
-                    var Placa = Console.ReadLine();
+                var Placa = Console.ReadLine();
 
                 Console.WriteLine("Infome o modelo do veiculo");
-                    var Modelo = Console.ReadLine();
+                var Modelo = Console.ReadLine();
 
-                    var DataEntrada = Convert.ToString(DateTime.Now);
+                var DataEntrada = Convert.ToString(DateTime.Now);
 
                 ArrayCarros[i, 0] = (IDcarro++).ToString();
                 ArrayCarros[i, 1] = Placa;
@@ -35,10 +34,29 @@ namespace ProjetoEstacionamento
             }
 
             Console.ReadKey();
-        }
+        }//INSERE OS REGISTROS NO CARRO
 
         public void listarCarros()
 
+        {
+            for (int i = 0; i < ArrayCarros.GetLength(0); i++)
+            {
+
+                {
+                    Console.WriteLine($"Id..........: {ArrayCarros[i, 0]}");
+                    Console.WriteLine($"Placa........: {ArrayCarros[i, 1]}");
+                    Console.WriteLine($"Modelo.......: {ArrayCarros[i, 2]}");
+                    Console.WriteLine($"Data de entrada: {ArrayCarros[i, 3]}");
+                    Console.WriteLine($"Data de Saida: {ArrayCarros[i, 4]}\n");
+
+                }
+            }
+
+            Console.ReadKey();
+
+        }// LISTA TUDOS
+
+        public void ListaTiketsNValidados()
         {
             for (int i = 0; i < ArrayCarros.GetLength(0); i++)
             {
@@ -54,8 +72,59 @@ namespace ProjetoEstacionamento
             }
 
             Console.ReadKey();
-        }
+        }// LISTA OS QUE NAO TEM DATA DE SAIDA
 
-       
+        public void ValidaEstacionamento()
+        {
+            var valida = Convert.ToString(DateTime.Now);
+
+            for (int i = 0; i < ArrayCarros.GetLength(0); i++)
+            {
+                if (ArrayCarros[i, 4] != "null")
+
+                    Console.WriteLine($"ID: {ArrayCarros[i, 0]}, Nome: {ArrayCarros[i, 1]} Modelo: {ArrayCarros[i, 2]}");
+            }
+
+            Console.WriteLine("Informe o ID a ser Validado: ");
+            var id = Console.ReadLine();
+
+            for (int i = 0; i < ArrayCarros.GetLength(0); i++)
+            {
+                if (ArrayCarros[i, 0] != null && ArrayCarros[i, 0] == id)
+                {
+                    ArrayCarros[i, 4] = valida;
+                }
+            }
+
+
+        } //DEU CERTO
+
+        public  bool PesquisaCarros(string placaCarro)
+        {
+
+            
+            for (int i = 0; i < ArrayCarros.GetLength(0); i++)
+            {
+                if (CompararNomes(placaCarro,ArrayCarros[i,1]))
+                {
+                    Console.WriteLine($"O carro{placaCarro}" + $"está disponivel:{ArrayCarros[i, 4]}");
+
+                    return ArrayCarros[i, 4] != null;
+                }
+
+            }
+            return false;
+        } //AINDA NAO FUNCIONA
+
+        public static bool CompararNomes(string primeiro, string segundo)
+        {
+            if (primeiro.ToLower().Replace(" ", "")
+                == segundo.ToLower().Replace(" ", ""))
+                return true;
+
+            return false;
+        }//COPIA PARA COMPARAR, USADO NA PESQUISA
+
+
     }
 }

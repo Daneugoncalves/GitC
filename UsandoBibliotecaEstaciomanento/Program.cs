@@ -12,9 +12,14 @@ namespace UsandoBibliotecaEstaciomanento
         static void Main(string[] args)
         {
             Carro Auto = new Carro(); 
+
             Auto.CadastrarCarro();
             Auto.listarCarros();
-           
+            Auto.ValidaEstacionamento();
+            Auto.PesquisaCarros("MJO5574"); //PASSANDO PARAMETRO PARA TESTE
+            Auto.listarCarros();
+
+
         }
     }
 }
