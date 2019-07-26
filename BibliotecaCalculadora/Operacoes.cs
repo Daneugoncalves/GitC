@@ -34,7 +34,7 @@ namespace BibliotecaCalculadora
         }
         public double RaioDeUmCirculo(double valor1)
         {
-            return (valor1 * Math.PI);
+            return (Math.Sqrt(valor1 / Math.PI));
         }
 
     }
