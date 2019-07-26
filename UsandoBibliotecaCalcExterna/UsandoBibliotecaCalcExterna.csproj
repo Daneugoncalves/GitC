@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BibliotecaCalculadora">
-      <HintPath>..\BibliotecaCalculadora.dll</HintPath>
+    <Reference Include="CalculadoraDoisPontoZero">
+      <HintPath>..\..\..\Users\hbsis\Downloads\CalculadoraDoisPontoZero.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
