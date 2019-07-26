@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB505491-9E04-4041-952A-634AD75D0F40}</ProjectGuid>
+    <ProjectGuid>{D1A04406-91EE-45E3-8217-F9FAB6D16BE8}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>UsandoBibliotecaEstaciomanento</RootNamespace>
-    <AssemblyName>UsandoBibliotecaEstaciomanento</AssemblyName>
+    <RootNamespace>UsandobibliotecaJoinha</RootNamespace>
+    <AssemblyName>UsandobibliotecaJoinha</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EstacionamentoFuncoesClass">
-      <HintPath>..\EstacionamentoFuncoesClass\bin\Debug\EstacionamentoFuncoesClass.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MostrarJoinhaClass\MostrarJoinhaClass.csproj">
+      <Project>{749ded42-0e0f-4718-8a1c-5cc83018bd80}</Project>
+      <Name>MostrarJoinhaClass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

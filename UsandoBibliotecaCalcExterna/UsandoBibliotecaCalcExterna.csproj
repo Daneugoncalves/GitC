@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB505491-9E04-4041-952A-634AD75D0F40}</ProjectGuid>
+    <ProjectGuid>{A29EB603-6883-4B0B-92D1-E8516BEDF4FA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>UsandoBibliotecaEstaciomanento</RootNamespace>
-    <AssemblyName>UsandoBibliotecaEstaciomanento</AssemblyName>
+    <RootNamespace>UsandoBibliotecaCalcExterna</RootNamespace>
+    <AssemblyName>UsandoBibliotecaCalcExterna</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EstacionamentoFuncoesClass">
-      <HintPath>..\EstacionamentoFuncoesClass\bin\Debug\EstacionamentoFuncoesClass.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

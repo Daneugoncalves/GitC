@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoEstacionamento
+namespace EstacionamentoFuncoesClass
 {
-    public class Carro
+    public class ControlaEstacionamento
     {
+
         string[,] ArrayCarros = new string[2, 5];
         int IDcarro = 0;
 
@@ -99,23 +100,6 @@ namespace ProjetoEstacionamento
 
         } //DEU CERTO
 
-        public  bool PesquisaCarros(string placaCarro)
-        {
-
-            
-            for (int i = 0; i < ArrayCarros.GetLength(0); i++)
-            {
-                if (CompararNomes(placaCarro,ArrayCarros[i,1]))
-                {
-                    Console.WriteLine($"O carro{placaCarro}" + $"está disponivel:{ArrayCarros[i, 4]}");
-
-                    return ArrayCarros[i, 4] != null;
-                }
-
-            }
-            return false;
-        } //AINDA NAO FUNCIONA
-
         public void PesquisaCarros1()
         {
             Console.WriteLine("Digite o ID a ser pesquisado");
@@ -126,20 +110,16 @@ namespace ProjetoEstacionamento
                 if (IdPesquisado == ArrayCarros[i, 0])
                 {
                     Console.WriteLine($"Resultados para o ID: {IdPesquisado}");
-                    
+                    Console.WriteLine($"Placa: {ArrayCarros[i, 1]}");
 
+                    return;
                 }
-            }  
+            }
+
+            Console.ReadKey();
         }
 
-        public static bool CompararNomes(string primeiro, string segundo)
-        {
-            if (primeiro.ToLower().Replace(" ", "")
-                == segundo.ToLower().Replace(" ", ""))
-                return true;
-
-            return false;
-        }//PARA COMPARAR, USADO NA PESQUISA
+       
 
 
     }
