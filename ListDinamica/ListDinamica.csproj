@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5CEC8C57-2946-4C23-BA83-32A96782EB3D}</ProjectGuid>
+    <ProjectGuid>{37AC8002-6341-470A-A478-A470F3138A7B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CantinaGG</RootNamespace>
-    <AssemblyName>CantinaGG</AssemblyName>
+    <RootNamespace>ListDinamica</RootNamespace>
+    <AssemblyName>ListDinamica</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\ContaM.cs" />
+    <Compile Include="Lanche\Lanches.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
