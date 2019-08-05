@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F607ABB3-19D0-43BA-91B7-164DA9E08F55}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MvcProject</RootNamespace>
+    <AssemblyName>MvcProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="View\Adicionar\FrmAdicionarLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\FrmAdicionarLivro.Designer.cs">
+      <DependentUpon>FrmAdicionarLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\FrmAdicionarAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\FrmAdicionarAutor.Designer.cs">
+      <DependentUpon>FrmAdicionarAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\FrmAdicionargenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\FrmAdicionargenero.Designer.cs">
+      <DependentUpon>FrmAdicionargenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\FrmAdicionarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\FrmAdicionarUsuario.Designer.cs">
+      <DependentUpon>FrmAdicionarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edição\FmrEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edição\FmrEditarUsuario.Designer.cs">
+      <DependentUpon>FmrEditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Autor.cs" />
+    <Compile Include="Model\Editora.cs" />
+    <Compile Include="Model\Genero.cs" />
+    <Compile Include="Model\Informacao.cs" />
+    <Compile Include="Model\Livro.cs" />
+    <Compile Include="Model\LivroAutor.cs" />
+    <Compile Include="Model\Locacao.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SistemaBibiotecaDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SistemaBibiotecaDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edição\FrmEditarLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edição\FrmEditarLivro.Designer.cs">
+      <DependentUpon>FrmEditarLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edição\FrmEditarGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edição\FrmEditarGenero.Designer.cs">
+      <DependentUpon>FrmEditarGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edição\FrmEditarAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edição\FrmEditarAutor.Designer.cs">
+      <DependentUpon>FrmEditarAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmAutores.Designer.cs">
+      <DependentUpon>FrmAutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmGenero.Designer.cs">
+      <DependentUpon>FrmGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLivro.Designer.cs">
+      <DependentUpon>FrmLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Adicionar\FrmAdicionarAutor.resx">
+      <DependentUpon>FrmAdicionarAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\FrmAdicionargenero.resx">
+      <DependentUpon>FrmAdicionargenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\FrmAdicionarLivro.resx">
+      <DependentUpon>FrmAdicionarLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\FrmAdicionarUsuario.resx">
+      <DependentUpon>FrmAdicionarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edição\FmrEditarUsuario.resx">
+      <DependentUpon>FmrEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Edição\FrmEditarLivro.resx">
+      <DependentUpon>FrmEditarLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edição\FrmEditarGenero.resx">
+      <DependentUpon>FrmEditarGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edição\FrmEditarAutor.resx">
+      <DependentUpon>FrmEditarAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmAutores.resx">
+      <DependentUpon>FrmAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmGenero.resx">
+      <DependentUpon>FrmGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmLivro.resx">
+      <DependentUpon>FrmLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SistemaBibiotecaDBDataSet.xsc">
+      <DependentUpon>SistemaBibiotecaDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SistemaBibiotecaDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SistemaBibiotecaDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SistemaBibiotecaDBDataSet.xss">
+      <DependentUpon>SistemaBibiotecaDBDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
