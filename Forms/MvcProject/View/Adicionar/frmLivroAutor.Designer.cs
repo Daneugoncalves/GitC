@@ -77,6 +77,7 @@
             this.label2.Size = new System.Drawing.Size(53, 38);
             this.label2.TabIndex = 0;
             this.label2.Text = "....";
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // comboBox1
             // 

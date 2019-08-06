@@ -42,5 +42,10 @@ namespace MvcProject.View.Adicionar
         {
 
         }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

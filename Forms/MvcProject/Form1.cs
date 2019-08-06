@@ -17,15 +17,12 @@ namespace MvcProject
         public Form1()
         {
             InitializeComponent();
-
         }
 
         public Usuario UsuarioRows;
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
-
              var result = this.usuariosTableAdapter1.LoginQuery(textBox1.Text, textBox2.Text);
 
             if (result != null)

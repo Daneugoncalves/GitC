@@ -24,6 +24,8 @@ namespace MvcProject.View
         {
             // TODO: This line of code loads data into the 'sistemaBibiotecaDBDataSet.Livros' table. You can move, or remove it, as needed.
             this.livrosTableAdapter.Fill(this.sistemaBibiotecaDBDataSet.Livros);
+            // TODO: This line of code loads data into the 'sistemaBibiotecaDBDataSet.Livros' table. You can move, or remove it, as needed.
+            this.livrosTableAdapter.QuerryInnerLivro(this.sistemaBibiotecaDBDataSet.Livros);
 
         }
 
@@ -78,11 +80,17 @@ namespace MvcProject.View
                 case 2:
                     {
                         frmLivroAutor formLivroautor = new frmLivroAutor();
+                        formLivroautor.LivrosRow = LivroSelect;
                         formLivroautor.ShowDialog();
                     }
                     break;
             }
             this.livrosTableAdapter.Fill(this.sistemaBibiotecaDBDataSet.Livros);
+        }
+
+        private void DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
