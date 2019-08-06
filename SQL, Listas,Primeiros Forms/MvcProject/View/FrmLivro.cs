@@ -49,5 +49,10 @@ namespace MvcProject.View
             }
 
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
