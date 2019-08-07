@@ -14,19 +14,26 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="45*"/>
-            <ColumnDefinition Width="147*"/>
-            <ColumnDefinition Width="58*"/>
+            <ColumnDefinition Width="76*"/>
+            <ColumnDefinition Width="223*"/>
+            <ColumnDefinition Width="76*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="69*"/>
-            <RowDefinition Height="59*"/>
-            <RowDefinition Height="72*"/>
+            <RowDefinition Height="52*"/>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="53*"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="Buton1" Content="Entrar" HorizontalAlignment="Center" Margin="141.8,27,131.8,0" VerticalAlignment="Top" Width="168" Grid.Row="2" Grid.Column="1" Height="43" Click="Button_Click"/>
-        <TextBox x:Name="tbxSenha" Margin="82.8,0,54.8,45" Grid.Row="1" TextWrapping="Wrap" Text="" Grid.Column="1" Height="46" VerticalAlignment="Bottom"/>
-        <TextBox x:Name="tbxLogin" Margin="82.8,0,54.8,37.6" TextWrapping="Wrap" Text="" Grid.Column="1" Height="58" VerticalAlignment="Bottom"/>
+        <Button x:Name="Buton1" Content="Entrar" Margin="143,0.8,135.4,10.2" Grid.Row="6" Grid.Column="1" Click="Button_Click"/>
+        <TextBox x:Name="tbxSenha" Margin="116,6.4,7.4,2.6" Grid.Row="3" TextWrapping="Wrap" Text="" Grid.Column="1"/>
+        <TextBox x:Name="tbxLogin" Margin="116,1,7.4,4.4" TextWrapping="Wrap" Text="" Grid.Column="1" Grid.Row="1"/>
+        <Label Content="Usuario:" Grid.Column="1" Margin="1,1,357.4,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Background="{x:Null}" Foreground="White" Height="35" Grid.Row="1"/>
+        <Label Content="Senha:" Grid.Column="1" Margin="1,8.4,373.4,2.6" FontSize="20" FontWeight="Bold" Background="{x:Null}" Foreground="White" Grid.Row="3"/>
 
     </Grid>
 </UserControl>

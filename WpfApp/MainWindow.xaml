@@ -11,6 +11,7 @@
         <viewsCustom:ucLogin x:Name="ucLoginForm" loginCorrect="UcLoginForm_loginCorrect" ></viewsCustom:ucLogin>
         <viewsCustom:ucTaskbar x:Name="ucTaskForm" ></viewsCustom:ucTaskbar>
         
+        
 
     </Grid>
 </Window>
