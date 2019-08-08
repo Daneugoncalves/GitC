@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CadstroValidacaodeCampos.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace CadstroValidacaodeCampos
 {
     /// <summary>
@@ -27,23 +29,24 @@ namespace CadstroValidacaodeCampos
         }
         string email, numero;
 
-
         private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
             email = txtEmail.Text;
             numero = txtNumero.Text;
 
-            Regex regexTelefone = new Regex(@"^([+]55)\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$");
-            Regex regexEmail = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            ValidatesCustom validatesCustom = new ValidatesCustom();
+
+            Regex regexTelefone = new Regex(@"^([+][0-9]{2})\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$");
+            
             Match match1 = regexTelefone.Match(numero);
-            Match match = regexEmail.Match(email);
+           
 
             if (match1.Success)
             { MessageBox.Show(numero + " Numero correto"); }
             else
-            { MessageBox.Show(numero + " Formato de numero inválido"); }
+            { MessageBox.Show(numero + " Formato de numero inválido, \r tente o formato +DDI(DDD) XXXXX-XXXX"); }
 
-           
+
             if (match.Success)
                 MessageBox.Show(email + " email correto");
             else
