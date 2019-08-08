@@ -180,8 +180,8 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="dec" Content="" Margin="2" Grid.Column="2" Grid.Row="5"
-                FontWeight="bold" Click="OperationButton_Click">
+        <Button x:Name="dec" Content="," Margin="2" Grid.Column="2" Grid.Row="5"
+                FontWeight="bold" Click="NumberButton_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
