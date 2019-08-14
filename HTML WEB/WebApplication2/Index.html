@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <!--http://httpbin.org/get-->
+
+    <div class="container">
+
+        <div class="row ">
+            <div class="col-md-12" align="center" style="background-color:aquamarine">Site Top altos responsivo</div>
+        </div>
+
+        <div class="row" style="position:relative; overflow:hidden;">
+            <div class="col-md-12">
+                <img id="imgtop" src="img/banner.jpg" alt="some text" class="img-fluid">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4" align="center" style="background-color:aquamarine">
+                <input id="Button1" type="button" value="Pesquisar" style="margin:1%;" />
+            </div>
+            <div class="col-md-4" align="center">
+                <input id="Button3" type="button" value="Ocultar" style="margin:1%;" />
+            </div>
+
+            <div class="col-md-4" align="center" style="background-color:aquamarine">
+
+                <input id="Button2" type="button" value="Apagar" style="margin:1%;" />
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-12" align="center">--</div>
+        </div>
+
+        <div class="row mostraPesquisa">
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Accept</span>
+                    </div>
+                    <input id="Accept" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mostraPesquisa">
+
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Accept-Encoding</span>
+                    </div>
+                    <input id="Accept-Encoding" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mostraPesquisa">
+
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Accept-Language</span>
+                    </div>
+                    <input id="Accept-Language" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mostraPesquisa">
+
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Host</span>
+                    </div>
+                    <input id="Host" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mostraPesquisa">
+
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">User-Agent</span>
+                    </div>
+                    <input id="User-Agent" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mostraPesquisa">
+
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">origin</span>
+                    </div>
+                    <input id="origin" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mostraPesquisa">
+
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">url</span>
+                    </div>
+                    <input id="url" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+        <!--   <div class="row">
+            <div class="col-md-12" align="center">
+                <img id="imgtop" src="img/logo.png" alt="some text" class="img-fluid">
+            </div>
+        </div>-->
+
+        <div class="row">
+            <div class="col-md-12" align="center" style="background-color:aquamarine">Top mexmo</div>
+        </div>
+
+    </div>
+
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+
+    <script>
+        $('.mostraPesquisa').hide();
+
+        $(function () {
+            $('#Button1').click(function () {
+                $('.mostraPesquisa').show(1000);
+
+                $.get('http://httpbin.org/get', function (data, textStatus, jqXHR) {
+
+                    var textJson = JSON.stringify(data, undefined, 4);
+
+                    $('#Accept').val(data.headers.Accept);
+                    $('#Accept-Encoding').val(data.headers['Accept-Encoding']);
+                    $('#Accept-Language').val(data.headers['Accept-Language']);
+                    $('#Upgrade-Insecure-Requests').val(data.headers['Upgrade-Insecure-Requests']);
+                    $('#Host').val(data.headers['Host']);
+                    $('#User-Agent').val(data.headers['User-Agent']);
+                    $('#Cache-Control').val(data.headers['Cache-Control']);
+                    $('#origin').val(data['origin']);
+                    $('#url').val(data['url']);
+
+                });
+            });
+        })
+
+        $(function () {
+            $('#Button3').click(function () {
+                $('.mostraPesquisa').hide(1000);
+
+            });
+        })
+
+        $(function limpa() {
+
+            $('#Button2').click(function () {
+
+                    $('#Accept').val('');
+                    $('#Accept-Encoding').val('');
+                    $('#Accept-Language').val('');
+                    $('#Upgrade-Insecure-Requests').val('');
+                    $('#Host').val('');
+                    $('#User-Agent').val('');
+                    $('#Cache-Control').val('');
+                    $('#origin').val('');
+                    $('#url').val('');    
+               
+            });
+        })
+
+
+    </script>
+</body>
+</html>

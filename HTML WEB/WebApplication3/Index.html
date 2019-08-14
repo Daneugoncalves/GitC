@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Acha Cep</title>
+
+
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-12" align="center" style="background-color:yellow">Site dus Correio</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Digite o CEP</span>
+                    </div>
+                    <input id="InputCep" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+
+            <div class="col-md-4" align="center">
+                <button id="Button1" type="button" class="btn btn-primary">Procurar</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">cep</span>
+                    </div>
+                    <input id="cep" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">logradouro</span>
+                    </div>
+                    <input id="logradouro" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">complemento</span>
+                    </div>
+                    <input id="complemento" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">bairro</span>
+                    </div>
+                    <input id="bairro" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">localidade</span>
+                    </div>
+                    <input id="localidade" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">uf</span>
+                    </div>
+                    <input id="uf" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">unidade</span>
+                    </div>
+                    <input id="unidade" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">ibge</span>
+                    </div>
+                    <input id="ibge" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">gia</span>
+                    </div>
+                    <input id="gia" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#Button1").click(function () {
+                $.get('https://viacep.com.br/ws/' + InputCep.value + '/json/', function (data, status) {
+
+                    $('#cep').val(data.cep);
+                    $('#logradouro').val(data.logradouro);
+                    $('#complemento').val(data.complemento);
+                    $('#bairro').val(data.bairro);
+                    $('#localidade').val(data.localidade);
+                    $('#uf').val(data.uf);
+                    $('#unidade').val(data.unidade);
+                    $('#ibge').val(data.ibge);
+                    $('#gia').val(data.gia);
+                    
+                });
+            });
+        });
+    </script>
+
+
+
+</body>
+</html>
