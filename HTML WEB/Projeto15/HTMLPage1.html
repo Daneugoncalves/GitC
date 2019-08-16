@@ -1,0 +1,139 @@
+﻿	<!DOCTYPE html>
+
+	<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+		
+
+	<link href="css/prettify.css" rel="stylesheet">
+	<link href="css/hemisu-light.css" rel="stylesheet">
+	<link href="css/screen.css" rel="stylesheet" media="screen">
+	<link id="style" href="css/classic.css" rel="stylesheet" media="screen">
+		
+		
+	</head>
+	<body>
+	
+	
+	<div class="container">
+        <div class="row ">
+            <div class="col-md-12" align="center" style="background-color:yellow">Tabela Usuario</div>
+        </div>
+
+
+
+<div class="row">
+            <div class="col-md-8" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Digite o Usuario</span>
+                    </div>
+                    <input id="InputIdUsu" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+
+
+		
+	 <div class="row">
+            <div class="col-md-8" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Usuario</span>
+                    </div>
+                    <input id="cUsuario" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+				
+        </div>
+		
+			 <div class="row">
+            <div class="col-md-8" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Ativo</span>
+                    </div>
+                    <input id="cAtivo" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+				
+        </div>		 
+		
+		<div class="row">
+            <div class="col-md-8" align="center">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">UsuInc</span>
+                    </div>
+                    <input id="cUsuInc" type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+				
+        </div>
+		
+		
+
+	
+		<div class="col-md-4" align="center">
+                 <button id="Button1" type="button" class="btn btn-primary">Procurar</button>
+               </div>
+		
+		
+		
+			
+
+			<div id="exemplo">
+			  
+				
+			</div>
+			
+	
+				
+
+
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.columns.min.js"></script>
+
+    </div>
+		<script>
+		
+		
+		$(document).ready(function () {
+            $("#Button1").click(function () {
+             
+                $.get('http://localhost:63237/Api/Usuarios/'+InputIdUsu.value, function (data, status) {
+
+                    $('#cUsuario').val(data.Usuario);         
+                    $('#cAtivo').val(data.Ativo);        
+                    $('#cUsuInc').val(data.UsuInc);        
+                });
+            });
+        });
+		
+		
+		/*JSON.stringify($('#formUsu').serializeArray())*/
+		
+		/*function CadastraUsuario() {
+			  $.ajax({
+				type: 'POST',
+				url: 'http://localhost:63237/Api/Usuarios',
+				data: JSON.stringify($('#formUsu').serializeArray()),
+				contentType: 'application/json; charset=utf-8',
+				dataType: 'json'
+			});
+
+		}*/
+		
+		
+		function GridRefresh(){
+				$.get('http://localhost:63237/Api/Usuario', function (dataApi) {
+					
+					 $('#exemplo').columns({data:dataApi});
+				});
+				}
+
+		</script>
+	</body>
+	</html>
