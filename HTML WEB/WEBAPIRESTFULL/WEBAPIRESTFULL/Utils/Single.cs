@@ -7,7 +7,6 @@ using System.Web;
 
 namespace WEBAPIRESTFULL.Utils
 {
-
     public class Single<T> : IDisposable
     {
         private static object _instance = null;
@@ -18,6 +17,7 @@ namespace WEBAPIRESTFULL.Utils
             {
                 _instance = Activator.CreateInstance<T>();
             }
+
             return (T)_instance;
         }
 
@@ -34,10 +34,22 @@ namespace WEBAPIRESTFULL.Utils
                 {
                     handle.Dispose();
                 }
+
+                // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
+                // TODO: set large fields to null.
+
                 disposedValue = true;
             }
         }
 
+        // TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
+        // ~Single()
+        // {
+        //   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+        //   Dispose(false);
+        // }
+
+        // This code added to correctly implement the disposable pattern.
         void IDisposable.Dispose()
         {
             _instance = null;
@@ -45,5 +57,6 @@ namespace WEBAPIRESTFULL.Utils
             GC.SuppressFinalize(this);
         }
         #endregion
+
     }
 }
