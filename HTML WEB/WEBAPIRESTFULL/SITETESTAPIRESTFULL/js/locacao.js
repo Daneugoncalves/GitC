@@ -17,7 +17,7 @@ jQuery(document).ready(function(){
             LivrosList = response;
 
             $.each(response,function(index,value){
-                $('#Livros')[0].innerHTML += '<option value=\''+ value.Id +'\'>'+ value.Tipo +'</option>';
+                $('#Livros')[0].innerHTML += '<option value=\''+ value.Id +'\'>'+ value.Titulo +'</option>';
             });
         });
 
@@ -36,18 +36,20 @@ jQuery(document).ready(function(){
             UsuariosList = response;
 
             $.each(response,function(index,value){
-                $('#Usuarios')[0].innerHTML += '<option value=\''+ value.Id +'\'>'+ value.Nome +'</option>';
+                $('#Usuario')[0].innerHTML += '<option value=\''+ value.Id +'\'>'+ value.Nome +'</option>';
             });
+
+            GetMethod(null);
         });
 
-        GetMethod(null);
+   
 });
 
 function GetMethod(object){
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://localhost:59271/Api/Locacao",
+        "url": "http://localhost:59271/Api/Locacaos",
         "method": "GET",
         "headers": {
             "Content-Type": "application/json",
@@ -81,8 +83,8 @@ function RefreshGrid(contentValue){
                          + 		'<th>ID</th>'
                          + 		'<th>Livro</th>'
                          + 		'<th>Usuário</th>'
-                         + 		'<th>Tipo</th>'
                          + 		'<th>Devolução</th>'
+                         + 		'<th>Tipo</th>'
                          + 		'<th>Opções</th>'
                          + 	'</tr>'
                          + '</tbody>');
@@ -97,10 +99,10 @@ function RefreshGrid(contentValue){
                  + '<td>' 
                  + 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
                  + 		'<div    class=\'col-md-6\'>'
-                 + 			'<button class=\'btn btn-block btn-danger col-md-3 btn-delet-event\' type=\'button\' send-post=\'Locacao\'  value=\''+ value.Id +'\'>Remover</button>'
+                 + 			'<button class=\'btn btn-block btn-danger col-md-3 btn-delet-event\' type=\'button\' send-post=\'Locacaos\'  value=\''+ value.Id +'\'>Remover</button>'
                  + 		'</div>'
                  + 		'<div     class=\'col-md-6\'>'
-                 + 			'<button  class=\'btn btn-block btn-success col-md-3 btn-editing-event\' send-post=\'Locacao\' value=\''+ value.Id + '\' type=\'button\'\>Editar</button>'
+                 + 			'<button  class=\'btn btn-block btn-success col-md-3 btn-editing-event\' send-post=\'Locacaos\' value=\''+ value.Id + '\' type=\'button\'\>Editar</button>'
                  + 		'</div>'
                  + 	'</div>'
                  + '</td>'

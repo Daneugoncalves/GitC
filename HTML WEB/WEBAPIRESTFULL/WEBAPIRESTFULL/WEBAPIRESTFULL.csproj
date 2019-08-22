@@ -177,6 +177,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908221142036_First.cs" />
+    <Compile Include="Migrations\201908221142036_First.Designer.cs">
+      <DependentUpon>201908221142036_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908221308251_Second.cs" />
+    <Compile Include="Migrations\201908221308251_Second.Designer.cs">
+      <DependentUpon>201908221308251_Second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Autores.cs" />
     <Compile Include="Models\BibliotecaContextDB.cs" />
     <Compile Include="Models\Editoras.cs" />
@@ -241,7 +250,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -271,6 +279,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201908221142036_First.resx">
+      <DependentUpon>201908221142036_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908221308251_Second.resx">
+      <DependentUpon>201908221308251_Second.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
