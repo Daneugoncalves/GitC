@@ -80,9 +80,9 @@ namespace RevisaoWebApi.Models
 
             Usuario user = dB.usuarios.FirstOrDefault(x => x.Login == value.ToString());
 
-            if (value)
+            if (user == null)
                 return ValidationResult.Success;
-            return new ValidationResult($"O campo {displayField} é inválido.");
+            return new ValidationResult($"O usuário já existe.");
 
 
 
