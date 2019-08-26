@@ -11,7 +11,6 @@ namespace ApiClientes.Models
     public class CustomValidFields : ValidationAttribute
     {
         ContextDB dB = new ContextDB();
-
         private ValidFields typeField;
 
         public CustomValidFields(ValidFields Type)
@@ -56,7 +55,6 @@ namespace ApiClientes.Models
             }
             return new ValidationResult($"O campo {validationContext.DisplayName} é obrigatório.");
         }
-
         private ValidationResult ValidarNome(object value, string displayField)
         {
 
@@ -66,7 +64,6 @@ namespace ApiClientes.Models
             return new ValidationResult($"O campo {displayField} é inválido.");
 
         }
-
         private ValidationResult ValidarCPFouCNPJ(object value, string displayField)
         {
             Usuario user = dB.usuarios.FirstOrDefault(x => x.CPFCNPJ == value.ToString());
@@ -86,7 +83,6 @@ namespace ApiClientes.Models
 
 
         }
-
         private ValidationResult ValidarCEP(object value, string displayField)
         {
 
@@ -95,7 +91,6 @@ namespace ApiClientes.Models
                 return ValidationResult.Success;
             return new ValidationResult($"O campo {displayField} é inválido.");
         }
-
         private ValidationResult ValidarEnderecosGenerico(object value, string displayField)
         {
 
@@ -104,7 +99,6 @@ namespace ApiClientes.Models
                 return ValidationResult.Success;
             return new ValidationResult($"O campo {displayField} é inválido.");
         }
-
         private ValidationResult ValidarTelefone(object value, string displayField)
         {
 
@@ -113,7 +107,6 @@ namespace ApiClientes.Models
                 return ValidationResult.Success;
             return new ValidationResult($"O campo {displayField} é inválido.");
         }
-
         private ValidationResult ValidarCelular(object value, string displayField)
         {
 
@@ -122,7 +115,6 @@ namespace ApiClientes.Models
                 return ValidationResult.Success;
             return new ValidationResult($"O campo {displayField} é inválido.");
         }
-
         private ValidationResult ValidarEmail(object value, string displayField)
         {
             bool result = Regex.IsMatch(value.ToString(), @"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
@@ -134,7 +126,6 @@ namespace ApiClientes.Models
             return new ValidationResult($"O campo {displayField} é inválido.");
 
         }
-
         private ValidationResult ValidarRG(object value, string displayField)
         {
             bool result = Regex.IsMatch(value.ToString(), @"^[0-9]{1,3}.?[0-9]{2,3}.?[0-9]{3}-?[A-Za-z0-9]{1}$");
@@ -157,7 +148,5 @@ namespace ApiClientes.Models
             return new ValidationResult($"O campo {displayField} é inválido.");
 
         }
-
-
     }
 }
